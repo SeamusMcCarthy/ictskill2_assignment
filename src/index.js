@@ -5,7 +5,9 @@ import HomePage from "./pages/homePage";
 import MoviePage from "./pages/movieDetailsPage";
 import FavoriteMoviesPage from "./pages/favoriteMoviesPage"; 
 import UpcomingMoviesPage from "./pages/upcomingMoviesPage"; 
+import PopularMoviesPage from "./pages/popularMoviesPage"; 
 import MovieReviewPage from "./pages/movieReviewPage";
+import CastPage from "./pages/movieCastPage";
 import SiteHeader from './components/siteHeader';
 import { QueryClientProvider, QueryClient } from "react-query";
 import { ReactQueryDevtools } from 'react-query/devtools';
@@ -33,8 +35,10 @@ const App = () => {
             <Route exact path="/reviews/form" component={AddMovieReviewPage} />
             <Route path="/reviews/:id" component={MovieReviewPage} />
             <Route exact path="/movies/upcoming" component={UpcomingMoviesPage} />
+            <Route exact path="/movies/popular" component={PopularMoviesPage} />
             <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
             <Route path="/movies/:id" component={MoviePage} />
+            <Route path="/movies/:id/cast" component={CastPage} />
             <Route exact path="/" component={HomePage} />
             <Redirect from="*" to="/" />
           </Switch>

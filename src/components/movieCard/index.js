@@ -27,7 +27,8 @@ const useStyles = makeStyles({
 
 export default function MovieCard({ movie, action }) {
   const classes = useStyles();
-  const { favorites, addToFavorites } = useContext(MoviesContext);
+  // const { favorites, addToFavorites } = useContext(MoviesContext);
+  const { favorites } = useContext(MoviesContext);
 
   if (favorites.find((id) => id === movie.id)) {
     movie.favorite = true;
@@ -35,10 +36,10 @@ export default function MovieCard({ movie, action }) {
     movie.favorite = false
   }
 
-  const handleAddToFavorite = (e) => {
-    e.preventDefault();
-    addToFavorites(movie);
-  };
+  // const handleAddToFavorite = (e) => {
+  //   e.preventDefault();
+  //   addToFavorites(movie);
+  // };
 
   return (
     <Card className={classes.card}>
@@ -82,14 +83,16 @@ export default function MovieCard({ movie, action }) {
           </Grid>
         </Grid>
       </CardContent>
-      <CardActions disableSpacing>
-      {/* <IconButton aria-label="add to favorites" onClick={handleAddToFavorite}>
-        <FavoriteIcon color="primary" fontSize="large" />
-      </IconButton> */}
+      <CardActions >
         {action(movie)}
         <Link to={`/movies/${movie.id}`}>
           <Button variant="outlined" size="medium" color="primary">
             More Info ...
+          </Button>
+        </Link>
+        <Link to={`/movies/${movie.id}/cast`}>
+          <Button variant="outlined" size="medium" color="primary">
+            Cast
           </Button>
         </Link>
       </CardActions>
