@@ -10,6 +10,7 @@ import Typography from "@material-ui/core/Typography";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import CalendarIcon from "@material-ui/icons/CalendarTodayTwoTone";
 import StarRateIcon from "@material-ui/icons/StarRate";
+import PersonIcon from '@material-ui/icons/Person';
 // import IconButton from "@material-ui/core/IconButton";
 import Grid from "@material-ui/core/Grid";
 import img from '../../images/film-poster-placeholder.png'
@@ -66,7 +67,7 @@ export default function CastCard({ movieCast}) {
         <Grid container>
           <Grid item xs={6}>
             <Typography variant="h6" component="p">
-              <CalendarIcon fontSize="small" />
+              <PersonIcon fontSize="medium" />
               {movieCast.character}
             </Typography>
           </Grid>
