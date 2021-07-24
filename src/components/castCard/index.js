@@ -16,7 +16,7 @@ import Grid from "@material-ui/core/Grid";
 import img from '../../images/film-poster-placeholder.png'
 import { Link } from "react-router-dom";
 import Avatar from "@material-ui/core/Avatar";
-import { MoviesContext } from "../../contexts/moviesContext";
+// import { MoviesContext } from "../../contexts/moviesContext";
 
 const useStyles = makeStyles({
   card: { maxWidth: 345 },
@@ -79,19 +79,13 @@ export default function CastCard({ movieCast}) {
           </Grid>
         </Grid>
       </CardContent>
-      {/* <CardActions >
-        {action(movie)}
-        <Link to={`/movies/${movie.id}`}>
+      <CardActions >
+        <Link to={`/movies/${movieCast.id}/disco`}>
           <Button variant="outlined" size="medium" color="primary">
-            More Info ...
+            Discography
           </Button>
         </Link>
-        <Link to={`/movies/${movie.id}/cast`}>
-          <Button variant="outlined" size="medium" color="primary">
-            Cast
-          </Button>
-        </Link>
-      </CardActions> */}
+      </CardActions>
     </Card>
   );
 }

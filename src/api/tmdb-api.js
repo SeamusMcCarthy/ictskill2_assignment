@@ -88,3 +88,17 @@ export const getMovieCast = (id) => {
       return json.cast;
     });
 };
+
+export const getDiscography = async ({queryKey}) => {
+  // eslint-disable-next-line no-unused-vars
+  const [prefix, { id }] = queryKey;
+  console.log("Retrieving discography");
+  return fetch(
+    `https://api.themoviedb.org/3/person/${id}/combined_credits?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
+  )
+    .then((res) => res.json())
+    .then((json) => {
+      console.log("JSON : " + id + " " + json.cast);
+      return json.cast;
+    });
+};

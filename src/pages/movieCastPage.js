@@ -21,6 +21,7 @@ const MovieCastPage = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   console.log(cast);  
+  
   const { data: movie, error, isLoading, isError } = useQuery(
     ["discover", { id: id }],
     getMovie

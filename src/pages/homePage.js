@@ -6,7 +6,7 @@ import {getMovies} from '../api/tmdb-api'
 import AddToFavoritesIcon from '../components/cardIcons/addToFavorites'
 
 const HomePage = (props) => {
-  const {  data, error, isLoading, isError }  = useQuery('discover', getMovies)
+  const { data, error, isLoading, isError }  = useQuery('discover', getMovies)
 
   if (isLoading) {
     return <Spinner />
@@ -16,6 +16,7 @@ const HomePage = (props) => {
     return <h1>{error.message}</h1>
   }  
   const movies = data.results;
+  console.log("Movies : " + movies);
 
   // Redundant, but necessary to avoid app crashing.
   const favorites = movies.filter(m => m.favorite)
