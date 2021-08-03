@@ -9,6 +9,7 @@ import PopularMoviesPage from "./pages/popularMoviesPage";
 import MovieReviewPage from "./pages/movieReviewPage";
 import CastPage from "./pages/movieCastPage";
 import DiscoPage from "./pages/discoPage";
+import ProfilePage from "./pages/profilePage";
 import SiteHeader from './components/siteHeader';
 import { QueryClientProvider, QueryClient } from "react-query";
 import { ReactQueryDevtools } from 'react-query/devtools';
@@ -40,6 +41,7 @@ const App = () => {
             <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
             <Route exact path="/movies/:id/cast" component={CastPage} />
             <Route exact path="/movies/:id/disco" component={DiscoPage} />
+            <Route exact path="/movies/:id/profile" component={ProfilePage} />
             <Route path="/movies/:id" component={MoviePage} />
             <Route exact path="/" component={HomePage} />
             <Redirect from="*" to="/" />

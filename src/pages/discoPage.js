@@ -1,5 +1,5 @@
 import React from "react";
-import PageTemplate from "../components/templateMovieDiscoPage";
+import PageTemplate from "../components/templateMovieListPage";
 import { withRouter } from "react-router-dom";
 import { useQuery } from 'react-query'
 import Spinner from '../components/spinner'

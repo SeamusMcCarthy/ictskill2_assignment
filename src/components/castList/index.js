@@ -11,4 +11,4 @@ const CastList = ( {cast }) => {
   return castCards;
 };
 
-export default CastList;
+export default CastList; 
