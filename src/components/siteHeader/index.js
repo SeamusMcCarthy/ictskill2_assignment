@@ -1,18 +1,17 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
+import { withRouter } from "react-router-dom";
+
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import Button from "@material-ui/core/Button";
-
 import MenuIcon from "@material-ui/icons/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import Menu from "@material-ui/core/Menu";
-import { withRouter } from "react-router-dom";
 import { useTheme } from "@material-ui/core/styles";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
-import { AuthContext } from "../../contexts/authContext";
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -21,8 +20,8 @@ const useStyles = makeStyles((theme) => ({
   offset: theme.mixins.toolbar,
 }));
 
-const SiteHeader = ( { history }) => {
-  const context = useContext(AuthContext);
+const SiteHeader = ({ history }) => {
+  
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
@@ -34,7 +33,7 @@ const SiteHeader = ( { history }) => {
     { label: "Upcoming", path: "/movies/upcoming" },
     { label: "Favorites", path: "/movies/favorites" },
     { label: "Popular", path: "/movies/popular" },
-    { label: "Option 4", path: "/" },
+    { label: "Profile", path: "/profile" },
   ];
 
   const handleMenuSelect = (pageURL) => {
@@ -49,18 +48,6 @@ const SiteHeader = ( { history }) => {
     <>
       <AppBar position="fixed" color="secondary">
         <Toolbar>
-        <Typography variant="h6" className={classes.title}>
-            {context.isAuthenticated ? (
-              <p>
-                Welcome! <button onClick={() => context.signout()}>Sign out</button>
-              </p>
-            ) : (
-              <p>
-                You are not logged in{" "}
-                <button onClick={() => history.push("/login")}>Login</button>
-              </p>
-            )}
-          </Typography>
           <Typography variant="h4" className={classes.title}>
             TMDB Client
           </Typography>

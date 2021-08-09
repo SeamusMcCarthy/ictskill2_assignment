@@ -1,6 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Route, Redirect, Switch} from "react-router-dom";
+import { QueryClientProvider, QueryClient } from "react-query";
+import { ReactQueryDevtools } from 'react-query/devtools';
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 import HomePage from "./pages/homePage";
 import MoviePage from "./pages/movieDetailsPage";
 import FavoriteMoviesPage from "./pages/favoriteMoviesPage"; 
@@ -10,14 +14,18 @@ import MovieReviewPage from "./pages/movieReviewPage";
 import CastPage from "./pages/movieCastPage";
 import DiscoPage from "./pages/discoPage";
 import ProfilePage from "./pages/profilePage";
-import SiteHeader from './components/siteHeader';
-import { QueryClientProvider, QueryClient } from "react-query";
-import { ReactQueryDevtools } from 'react-query/devtools';
-import MoviesContextProvider from "./contexts/moviesContext";
-import AddMovieReviewPage from './pages/addMovieReviewPage';
 import LoginPage from "./pages/loginPage";
-import PrivateRoute from "./privateRoute";
+import Signup from "./pages/signup"
+import Profile from "./pages/profile"
+import ForgotPassword from "./pages/forgotPassword"
+import UpdateProfile from "./pages/updateProfile"
+import AddMovieReviewPage from './pages/addMovieReviewPage';
+
 import AuthProvider from "./contexts/authContext";
+import MoviesContextProvider from "./contexts/moviesContext";
+
+import PrivateRoute from "./privateRoute";
+import SiteHeader from './components/siteHeader';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -34,21 +42,25 @@ const App = () => {
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <AuthProvider>
-          <SiteHeader />      {/* New Header  */}
+          <SiteHeader />
           <MoviesContextProvider>
             {" "}
             <Switch>
-              <Route exact path="/reviews/form" component={AddMovieReviewPage} />
-              <Route path="/reviews/:id" component={MovieReviewPage} />
+              <Route path="/login" component={LoginPage} />
+              <Route path="/signup" component={Signup} />
+              <Route path="/forgot-password" component={ForgotPassword} />
+              <PrivateRoute path="/update-profile" component={UpdateProfile} />
+              <PrivateRoute path="/profile" component={Profile} />
+              <PrivateRoute exact path="/reviews/form" component={AddMovieReviewPage} />
+              <PrivateRoute path="/reviews/:id" component={MovieReviewPage} />
               <PrivateRoute exact path="/movies/upcoming" component={UpcomingMoviesPage} />
               <PrivateRoute exact path="/movies/popular" component={PopularMoviesPage} />
-              <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
-              <Route exact path="/movies/:id/cast" component={CastPage} />
-              <Route exact path="/movies/:id/disco" component={DiscoPage} />
-              <Route exact path="/movies/:id/profile" component={ProfilePage} />
-              <Route path="/movies/:id" component={MoviePage} />
-              <Route exact path="/" component={HomePage} />
-              <Route path="/login" component={LoginPage} />
+              <PrivateRoute exact path="/movies/favorites" component={FavoriteMoviesPage} />
+              <PrivateRoute exact path="/movies/:id/cast" component={CastPage} />
+              <PrivateRoute exact path="/movies/:id/disco" component={DiscoPage} />
+              <PrivateRoute exact path="/movies/:id/profile" component={ProfilePage} />
+              <PrivateRoute path="/movies/:id" component={MoviePage} />
+              <PrivateRoute exact path="/" component={HomePage} />
               <Redirect from="*" to="/" />
             </Switch>
           </MoviesContextProvider>
