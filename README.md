@@ -4,17 +4,17 @@ Name: Seamus McCarthy
 
 ## Overview.
 
-Extended the Movies app to provide some additional views and basic authentication (based on routing samples). Some of the views can be accessed from the navigation bar
-where others are linked from movie/cast-member cards.
+Extended the Movies app to provide some additional views and Firebase authentication. Some of the views can be accessed from the navigation bar
+where others are linked from movie/cast-member cards. All routes (bar login and signup pages) are now protected until the user logs in.
  
  New features include:
 
- + A view of popular movies. (Note that as this was returning the same list as the Upcoming view, I removed the descending sort in the API call to show the difference).
- + Each movie card now has a button to view the cast members.
- + Each cast member card has 2 buttons - Profile and Discography.
- + The Profile page contains a number of items - actor specific images, a bio and chips detailing date of birth and hometown.
- + The Discography page lists all movies the actor has worked on and re-uses the movie-related components (filter results, adding to favourites etc).
- + Basic authentication is required to access the "Upcoming" and "Popular" pages. This has been applied as per sample9 of the routing samples provided.
+ + Firebase Authentication including Login, Signup, User Profile (which allows logout) and Reset Password pages. 
+ + A view of "Popular" movies. Note that as this view was returning the same list as the "Upcoming" view, I removed the descending sort in the API call to show the difference.
+ + Each returned movie card now has a button to view the cast members.
+ + Each new cast member card has 2 buttons - Profile and Discography.
+ + The Profile page contains a number of items - actor specific images, a biography and chips detailing their date of birth and hometown.
+ + The Discography page lists all movies the actor has worked on and re-uses the movie-related components (filter results by text/genre, adding to favourites etc).
 
 ## Setup requirements.
 
@@ -29,21 +29,42 @@ Endpoints:
 + Get actor images - /person/{id}/images?api_key=<<api_key>>
 + Get discography - /person/{id}/combined_credits?api_key=<<api_key>>&language=en-US&page=1
 
-
 ## App Design.
 
 ### Component catalogue.
 
-....... Insert a screenshot from the Storybook UI showing your component catalogue. [For the Movies app, hi-light stories relating to new/modified components - see the example screenshot below] .......
+Storybook component testing with new/amended stories highlighted
 
 ![][stories]
 
 ### UI Design.
 
-...... Insert screenshots of the app's views, with appropriate captions (see example below). (For the Movies Fan App, only show the new/modified views) ........
+![][login]
+>Allows the user to login or switch to the Sign Up or Forgot Password pages
 
-![][view]
->Shows detailed information on a movie. Clicking the 'Reviews' floating action button will display extracts from critic reviews.
+![][signup]
+>Allows the user to signup or switch to the Login page
+
+![][password]
+>Allows the user to request a password reset
+
+![][update]
+>Allows the user to log out or opt to update their email/password details
+
+![][updatedtls]
+>Allows the user to enter the amended details
+
+![][popular]
+>Displays a list of popular moves (in ascending order) and this view also shows the new 'Cast' button on the movie card
+
+![][cast]
+>Displays the movie cast
+
+![][actorprofile]
+>Displays some details about the actor
+
+![][disco]
+>Shows the actor's discography
 
 ### Routing.
 
@@ -52,13 +73,26 @@ Endpoints:
 + Get /movies/:id/cast - displays the cast members
 + Get /movies/:id/disco - displays an actor discography
 + Get /movies/:id/profile - displays an actor's profile page
-+ Get /login - displays a basic login page
++ /login - displays a basic login page with options to link to the Signup and Forgot Password pages
++ /signup - displays a basic sign up page with an option to switch to the login page
++ /forgot-password - allows the user to enter the email address which will result in them being sent a link to reset their password
++ /profile - allows the user to log out or link to update their details
++ /update-profile - allows the user to update their email address or password
 
 ## Independent learning (If relevant).
 
-....... Briefly state any technologies/techniques used in your project codebase that was not covered in the lectures/labs. Provide source code filename (source code excerpts are not required in most cases) references to support your assertions and include references (articles/blogs) ......... 
+Firebase authentication was studied in the following YouTube tutorial - https://www.youtube.com/watch?v=PKwu15ldZ7k
+This included using Bootstrap for the Login/Signup/Profile/Reset Password pages rather than Material UI. I left these in to show that a 2nd library had been looked into.
 
 
-[model]: ./data.jpg
-[view]: ./view.png
-[stories]: ./storybook.png
+[login]: ./git-images/login.png
+[signup]: ./git-images/signup.png
+[profile]: ./git-images/profile.png
+[disco]: ./git-images/discography.png
+[cast]: ./git-images/cast.png
+[actorprofile]: ./git-images/actorprofile.png
+[password]: ./git-images/password.png
+[popular]: ./git-images/popular.png
+[update]: ./git-images/update.png
+[updatedtls]: ./git-images/updateDtls.png
+[stories]: ./git-images/storybook.png

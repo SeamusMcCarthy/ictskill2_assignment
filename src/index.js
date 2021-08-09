@@ -18,6 +18,7 @@ import LoginPage from "./pages/loginPage";
 import Signup from "./pages/signup"
 import Profile from "./pages/profile"
 import ForgotPassword from "./pages/forgotPassword"
+import UpdateProfile from "./pages/updateProfile"
 import AddMovieReviewPage from './pages/addMovieReviewPage';
 
 import AuthProvider from "./contexts/authContext";
@@ -48,6 +49,7 @@ const App = () => {
               <Route path="/login" component={LoginPage} />
               <Route path="/signup" component={Signup} />
               <Route path="/forgot-password" component={ForgotPassword} />
+              <PrivateRoute path="/update-profile" component={UpdateProfile} />
               <PrivateRoute path="/profile" component={Profile} />
               <PrivateRoute exact path="/reviews/form" component={AddMovieReviewPage} />
               <PrivateRoute path="/reviews/:id" component={MovieReviewPage} />
