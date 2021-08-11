@@ -68,8 +68,8 @@ Storybook component testing with new/amended stories highlighted
 
 ### Routing.
 
-+ Get /movies/upcoming (protected) - displays upcoming movies
-+ Get /movies/popular (protected) - displays popular movies in ascending order
++ Get /movies/upcoming - displays upcoming movies
++ Get /movies/popular - displays popular movies in ascending order
 + Get /movies/:id/cast - displays the cast members
 + Get /movies/:id/disco - displays an actor discography
 + Get /movies/:id/profile - displays an actor's profile page
