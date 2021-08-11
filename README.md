@@ -85,14 +85,14 @@ Firebase authentication was studied in the following YouTube tutorial - https://
 This included using Bootstrap for the Login/Signup/Profile/Reset Password pages rather than Material UI. I left these in to show that a 2nd library had been looked into.
 
 
-[login]: ./git-images/login.png
-[signup]: ./git-images/signup.png
-[profile]: ./git-images/profile.png
-[disco]: ./git-images/discography.png
-[cast]: ./git-images/cast.png
-[actorprofile]: ./git-images/actorprofile.png
-[password]: ./git-images/password.png
-[popular]: ./git-images/popular.png
-[update]: ./git-images/update.png
-[updatedtls]: ./git-images/updateDtls.png
-[stories]: ./git-images/storybook.png
+[login]: ./Git-images/login.png
+[signup]: ./Git-images/signup.png
+[profile]: ./Git-images/profile.png
+[disco]: ./Git-images/discography.png
+[cast]: ./Git-images/cast.png
+[actorprofile]: ./Git-images/actorprofile.png
+[password]: ./Git-images/password.png
+[popular]: ./Git-images/popular.png
+[update]: ./Git-images/update.png
+[updatedtls]: ./Git-images/updateDtls.png
+[stories]: ./Git-images/storybook.png
