@@ -1,15 +1,8 @@
 import React from "react";
 import Chip from "@material-ui/core/Chip";
 import Paper from "@material-ui/core/Paper";
-// import AccessTimeIcon from "@material-ui/icons/AccessTime";
-// import MonetizationIcon from "@material-ui/icons/MonetizationOn";
-// import StarRate from "@material-ui/icons/StarRate";
-// import NavigationIcon from "@material-ui/icons/Navigation";
-// import Fab from "@material-ui/core/Fab";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
-// import Drawer from "@material-ui/core/Drawer";
-// import MovieReviews from "../movieReviews"
 import CalendarIcon from "@material-ui/icons/CalendarTodayTwoTone";
 import RoomIcon from "@material-ui/icons/Room";
 
@@ -34,7 +27,6 @@ const useStyles = makeStyles((theme) => ({
 
 const ProfileDetails = ({actor}) => {
   const classes = useStyles();
-  // const [drawerOpen, setDrawerOpen] = useState(false);
 
   return (
     <>

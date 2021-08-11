@@ -31,7 +31,6 @@ export const Exceptional = () => {
   return (
     <CastCard
       movieCast={sampleNoPoster}
-      // action={(movie) => <AddToFavoritesIcon movie={movie} />}
       taging={(movie) => null}
     />
   );

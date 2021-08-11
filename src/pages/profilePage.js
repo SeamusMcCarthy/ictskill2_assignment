@@ -1,9 +1,7 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-// import MovieHeader from "../components/headerMovie/";
 import ProfileDetails from "../components/profileDetails";
 import PageTemplate from "../components/templateActorPage";
-// import useMovie from "../hooks/useMovie";
 import { getProfile } from '../api/tmdb-api'
 import { useQuery } from "react-query";
 import Spinner from '../components/spinner'

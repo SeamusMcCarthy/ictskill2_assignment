@@ -26,29 +26,13 @@ const useStyles = makeStyles({
   },
 });
 
-// export default function CastCard({ movieCast, action }) {
 export default function CastCard({ movieCast}) {
   const classes = useStyles();
-  // const { favorites } = useContext(MoviesContext);
-
-  // if (favorites.find((id) => id === movie.id)) {
-  //   movie.favorite = true;
-  // } else {
-  //   movie.favorite = false
-  // }
-
 
   return (
     <Card className={classes.card}>
       <CardHeader
       className={classes.header}
-      // avatar={
-      //   movie.favorite ? (
-      //     <Avatar className={classes.avatar}>
-      //       <FavoriteIcon />
-      //     </Avatar>
-      //   ) : null
-      // }
       title={
         <Typography variant="h5" component="p">
           <PersonIcon fontSize="medium" />
