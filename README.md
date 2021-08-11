@@ -68,8 +68,8 @@ Storybook component testing with new/amended stories highlighted
 
 ### Routing.
 
-+ Get /movies/upcoming (protected) - displays upcoming movies
-+ Get /movies/popular (protected) - displays popular movies in ascending order
++ Get /movies/upcoming - displays upcoming movies
++ Get /movies/popular - displays popular movies in ascending order
 + Get /movies/:id/cast - displays the cast members
 + Get /movies/:id/disco - displays an actor discography
 + Get /movies/:id/profile - displays an actor's profile page
@@ -85,14 +85,14 @@ Firebase authentication was studied in the following YouTube tutorial - https://
 This included using Bootstrap for the Login/Signup/Profile/Reset Password pages rather than Material UI. I left these in to show that a 2nd library had been looked into.
 
 
-[login]: ./git-images/login.png
-[signup]: ./git-images/signup.png
-[profile]: ./git-images/profile.png
-[disco]: ./git-images/discography.png
-[cast]: ./git-images/cast.png
-[actorprofile]: ./git-images/actorprofile.png
-[password]: ./git-images/password.png
-[popular]: ./git-images/popular.png
-[update]: ./git-images/update.png
-[updatedtls]: ./git-images/updateDtls.png
-[stories]: ./git-images/storybook.png
+[login]: ./Git-images/Login.png
+[signup]: ./Git-images/Signup.png
+[profile]: ./Git-images/Profile.png
+[disco]: ./Git-images/Discography.png
+[cast]: ./Git-images/Cast.png
+[actorprofile]: ./Git-images/ActorProfile.png
+[password]: ./Git-images/Password.png
+[popular]: ./Git-images/Popular.png
+[update]: ./Git-images/Update.png
+[updatedtls]: ./Git-images/UpdateDtls.png
+[stories]: ./Git-images/Storybook.png
